@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+#immagineTitolo{
+  object-fit:fill;
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+body{
+  background-image: url('../../public/rickAndMortyBackgroundImage.png');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  margin: 0;
+  overflow-y: scroll;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#divHomeParagraph{
+  max-width: 100%;
+  padding-top: 10% ;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#homeParagraph{
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.825);
+  padding: 3% 5%;
+  border-radius: 30px;
+  color: white;
+  font-size: 200%;
+  font-family: 'Lobster', cursive;
+}
+#arrowContainer {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25%; 
+
+}
+
+.arrow {
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid #ffffff;
+  animation: bounce 1.5s infinite;
+
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+#homeButtonContainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0%; 
+  max-width: 100%;
+  padding: 0px 2%;
+}
+
+.homeButton{
+  width: 26%;
+  height: 150px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.825);
+  margin: 0px 2%;
+  border-radius: 30px;
+}
+#divHomePagesParagraph{
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 9%;
+  padding-bottom: 2%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+.HomePagesParagraph{
+  width: 21%;
+  margin-left: 8%;
+  margin-right: 8%;
+  max-width: 13%;
+  color: rgb(0, 0, 0);
+  font-size: 170%;
+  font-family: 'Lobster', cursive;
+  border-radius: 30px;
+  padding: 2%;
+  background-color: #ffffff8d;
+}
+#locationsButton{
+  background-image: url('../../public/locations.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#charactersButton{
+  background-image: url('../../public/characters.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#episodesButton{
+  background-image: url('../../public/episodes.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#charactersInfo{
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  border-radius: 30px;
+  padding: 5%;
+  max-width: 90%;
+}
+.charactersImage{
+  border-radius: 20px;
+  width: 25%;
+  margin-bottom: 4%;
+  margin-top: 2%;
+}
+#characterInfo{
+  color: white;
+  font-family:'Sabo';
+  font-size: 300%;
+  margin-left: 7%;
+  margin-top: 2%;
+}
+#singleCharacterInfo{
+  display: flex;
+}
+.characterDetailsLink{
+  font-size: 50%;
+  color: blue;
+  text-decoration-line: underline;
+}
+#imageSingleId{
+  border-radius: 30px;
+  width: 40%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  height: 80%;
+}
+#characterInfoId{
+  color: white;
+  font-family:'Sabo';
+  font-size: 250%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+#singleCharacterInfoId{
+  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+}
+#characterSearch{
+  width: 30%;
+  text-align: center;
+  max-height: 10%;
+  height: 40px;
+  font-size: 200%;
+  color: #ffffff;
+  border-radius: 30px;
+  margin-left: 40%;
+  margin-right: 40%;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 4%;
+  margin-top: -4%;
+}
+::placeholder {
+  color: #ffffff;
+  opacity: 1;
+  font-style: italic;
+}
+.locationDetailsLink{
+  font-size: 70%;
+  color: blue;
+  text-decoration-line: underline;
+}
+#locationsInfo{
+  color: white;
+  font-family:'Sabo';
+  font-size: 300%;
+  margin-left: 7%;
+}
+.row{
+  margin-left: -9%;
+}
+.episodeDetailsLink{
+  font-size: 70%;
+  color: blue;
+  text-decoration-line: underline;
+}
+.divHeaderButtons{
+  text-align: center;
+}
+.headerButtons{
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 200%;
+  color: lightblue;
+  border-radius: 10px;
+
+}
+.headerButtons:hover{
+  color: blue;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.825);
+}
